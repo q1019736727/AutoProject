@@ -1,6 +1,9 @@
 
 import os
 import re
+
+import requests
+import urllib3
 from biplist import *
 
 class ConfigProject:
@@ -49,4 +52,7 @@ if __name__ == "__main__":
     modif.modifyNameVersion()
     modif.modefyAudio()
     modif.modefyNet()
-    pass
+
+    req = requests.get(url='https://console-mock.apipost.cn/app/mock/project/ac7adb53-2bf7-41cf-f4fc-bc44af8037dd//info')
+    print(req.json())
+
